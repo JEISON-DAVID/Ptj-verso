@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía completa del universo PTJ (Park Tae-joon) - Lookism, How to Fight, Manager Kim y más">
+    <title>PTJ Universe - Guía Completa</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --secondary-color: #6c5ce7;
+            --accent-color: #fd79a8;
+            --bg-color: #f5f6fa;
+            --text-color: #2d3436;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --gradient-primary: linear-gradient(135deg, #6c5ce7, #fd79a8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.ytimg.com/vi/zkMkjwdwmi0/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108,92,231,0.3);
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(108,92,231,0.4);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-primary);
+            margin: 1rem auto;
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .series-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .series-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .series-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .series-card:hover .series-image img {
+            transform: scale(1.1);
+        }
+
+        .series-status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .series-content {
+            padding: 1.5rem;
+        }
+
+        .series-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .series-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .series-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin: 3rem 0;
+            width: calc(50% - 2rem);
+            position: relative;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: auto;
+            padding-left: 3rem;
+            transform: translateX(50px);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            top: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -4rem;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -4rem;
+            transform: translateY(-50%);
+        }
+
+        .timeline-date {
+            position: absolute;
+            top: -30px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .theories-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin: 4rem 0;
+        }
+
+        .theory-card {
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background-color: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .theory-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .character-details {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .character-image {
+            width: 200px;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .character-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .character-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .connections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .connection-item {
+            background: #f8f9fa;
+            padding: 0.5rem;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline::before {
+                left: 2rem;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 4rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -3rem;
+            }
+
+            .character-details {
+                grid-template-columns: 1fr;
+            }
+
+            .character-image {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">PTJ</span>
+                Universe
+            </a>
+            <ul class="nav-links">
+                <li><a href="#series">Series</a></li>
+                <li><a href="#timeline">Cronología</a></li>
+                <li><a href="#theories">Teorías</a></li>
+                <li><a href="#characters">Personajes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>PTJ Universe</h1>
+            <p>Explora el fascinante universo creado por Park Tae-joon, donde las historias se entrelazan y los personajes cobran vida.</p>
+            <a href="#series" class="hero-button">Comenzar Exploración</a>
+        </div>
+    </div>
+
+    <main class="content">
+        <section id="series">
+            <h2 class="section-title">Series del Universo PTJ</h2>
+            <div class="series-grid">
+                <div class="series-card">
+                    <div class="series-image">
+                        <img src="https://betv.disway.id/upload/d20f10acdbfc3626583c3f375cfb0b74.jpg" alt="Lookism">
+                        <span class="series-status">En emisión</span>
+                    </div>
+                    <div class="series-content">
+                        <h3>Lookism</h3>
+                        <p>La serie principal que sigue a Park Hyung Seok, un estudiante que misteriosamente obtiene un segundo cuerpo.</p>
+                        <div class="series-stats">
+                            <span>400+ capítulos</span>
+                            <span>2014 - presente</span>
+                        </div>
+                    </div></antArtifact>
+                    </div>
+                <div class="series-card">
+                    <div class="series-image">
+                        <img src="https://i.ytimg.com/vi/yD4O9AN9Tos/hq720.jpg" alt="How to Fight">
+                        <span class="series-status">Finalizado</span>
+                    </div>
+                    <div class="series-content">
+                        <h3>How to Fight (Viral Hit)</h3>
+                        <p>La historia de Hobin Yoo, un youtuber que aprende diferentes estilos de pelea para sobrevivir y proteger a sus amigos.</p>
+                        <div class="series-stats">
+                            <span>148 capítulos</span>
+                            <span>2019 - 2022</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-card">
+                    <div class="series-image">
+                        <img src="https://superherojacked.b-cdn.net/wp-content/uploads/2023/01/Senior-Manager-Kim-Workout-2.jpg" alt="Manager Kim">
+                        <span class="series-status">Finalizado</span>
+                    </div>
+                    <div class="series-content">
+                        <h3>Manager Kim</h3>
+                        <p>La historia del legendario agente del Servicio Nacional de Inteligencia que debe proteger a su hija.</p>
+                        <div class="series-stats">
+                            <span>150 capítulos</span>
+                            <span>2020 - 2022</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-card">
+                    <div class="series-image">
+                        <img src="https://i.ytimg.com/vi/6N9_6l-3Vzc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDwoS0jM88aHQ4TGdcnHOmFZtbTIg" alt="Quest Supremacy">
+                        <span class="series-status">En emisión</span>
+                    </div>
+                    <div class="series-content">
+                        <h3>Quest Supremacy</h3>
+                        <p>Un mundo donde las misiones aparecen como en los videojuegos, siguiendo a un estudiante que debe completarlas para sobrevivir.</p>
+                        <div class="series-stats">
+                            <span>80+ capítulos</span>
+                            <span>2022 - presente</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-card">
+                    <div class="series-image">
+                        <img src="https://img.anili.st/media/123646" alt="My Life as a Loser">
+                        <span class="series-status">Finalizado</span>
+                    </div>
+                    <div class="series-content">
+                        <h3>My Life as a Loser</h3>
+                        <p>Historia sobre un "perdedor" que obtiene una segunda oportunidad en la vida después de su muerte.</p>
+                        <div class="series-stats">
+                            <span>100+ capítulos</span>
+                            <span>2020 - 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="timeline">
+            <h2 class="section-title">Cronología Completa del PTJ-verse</h2>
+            
+            <!-- Pre-Historia -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">1980s</span>
+                    <h3>Era de Manager Kim</h3>
+                    <p>- Manager Kim sirve en el ejército y se convierte en agente del SNI<br>
+                    - Entrenamiento con Tom Lee<br>
+                    - Misiones en el extranjero</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">1990s</span>
+                    <h3>Formación de Workers</h3>
+                    <p>- Eugene funda Workers<br>
+                    - Formación de las primeras afiliadas<br>
+                    - Tom Lee establece su academia de artes marciales</p>
+                </div>
+            </div>
+
+            <!-- Historia Principal -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2014</span>
+                    <h3>Inicio de Lookism</h3>
+                    <p>- Park Hyung Seok obtiene su segundo cuerpo<br>
+                    - Transferencia a Jae Won High School<br>
+                    - Primeros encuentros con Vasco y Jay</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2019</span>
+                    <h3>How to Fight Comienza</h3>
+                    <p>- Hobin inicia su canal de YouTube<br>
+                    - Entrenamiento con Samdak<br>
+                    - Primeros conflictos con el Grupo Yoo</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2020</span>
+                    <h3>Era de Manager Kim</h3>
+                    <p>- Secuestro de la hija de Manager Kim<br>
+                    - Conflicto con la organización SMC<br>
+                    - Reencuentro con antiguos compañeros</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2021</span>
+                    <h3>Eventos de My Life as a Loser</h3>
+                    <p>- Muerte y renacimiento del protagonista<br>
+                    - Conexiones con la trama de Lookism<br>
+                    - Desarrollo de nuevas habilidades</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2022</span>
+                    <h3>Quest Supremacy</h3>
+                    <p>- Aparición del sistema de misiones<br>
+                    - Primeras conexiones con Workers<br>
+                    - Desarrollo de la trama principal</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2023-Presente</span>
+                    <h3>Convergencia de Historias</h3>
+                    <p>- Guerra entre facciones<br>
+                    - Revelaciones sobre los dos cuerpos<br>
+                    - Conexiones entre todas las series</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="theories" class="theories-section">
+            <h2 class="section-title">Teorías del Universo PTJ</h2>
+            
+            <div class="theory-card">
+                <h3>El Origen de los Dos Cuerpos</h3>
+                <p>La habilidad de tener dos cuerpos podría estar relacionada con los experimentos de Workers y las investigaciones de Eugene. Hay evidencias que sugieren que no es un fenómeno aislado y que podría estar conectado con la tecnología de clonación.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Conexión entre Workers y Quest Supremacy</h3>
+                <p>El sistema de misiones en Quest Supremacy podría ser otro experimento de Workers para probar y reclutar individuos fuertes, similar a cómo operan en Lookism.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>El Papel de Tom Lee</h3>
+                <p>Tom Lee parece tener conexiones con todos los eventos importantes del universo PTJ, sugiriendo que podría ser una figura clave en el desarrollo de la trama general.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>La Verdadera Naturaleza de Workers</h3>
+                <p>Workers podría ser más que una organización criminal; hay indicios de que están investigando poderes sobrehumanos y tienen objetivos más grandes que el control del mercado negro.</p>
+            </div>
+        </section>
+
+        <section id="characters">
+            <h2 class="section-title">Personajes Principales</h2>
+            <div class="series-grid">
+                <!-- Personajes de Lookism -->
+                <div class="series-card" data-character="hyungseok">
+                    <div class="series-image">
+                        <img src="https://i.ytimg.com/vi/1AhKjqKgrKM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDRBGaNR-OFdLFBu3DIpMK8pNR0iA" alt="Park Hyung Seok">
+                    </div>
+                    <div class="series-content">
+                        <h3>Park Hyung Seok</h3>
+                        <p>Protagonista de Lookism. Posee dos cuerpos y lucha contra la discriminación mientras se ve envuelto en conflictos con organizaciones criminales.</p>
+                    </div>
+                </div>
+
+                <!-- Personaje de How to Fight -->
+                <div class="series-card" data-character="hobin">
+                    <div class="series-image">
+                        <img src="https://superherojacked.b-cdn.net/wp-content/uploads/2023/04/Hobin-Yoo-Workout-2.jpg" alt="Hobin Yoo">
+                    </div>
+                    <div class="series-content">
+                        <h3>Hobin Yoo</h3>
+                        <p>Protagonista de How to Fight. Un youtuber que aprende diferentes estilos de lucha para proteger a sus amigos y enfrentarse a las amenazas que lo rodean.</p>
+                    </div>
+                </div>
+
+                <!-- Personaje de Manager Kim -->
+                <div class="series-card" data-character="managerkim">
+                    <div class="series-image">
+                        <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/142/2023/11/06/Manhwa-Manager-Kim-Chapter-111-Bahasa-Indonesia-2340330441.jpg" alt="Manager Kim">
+                    </div>
+                    <div class="series-content">
+                        <h3>Manager Kim</h3>
+                        <p>Ex agente del SNI y padre protector. Sus habilidades y conexiones pasadas lo convierten en una figura clave en el universo PTJ.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="characterInfo"></div>
+        </div>
+    </div>
+
+    <script>
+        const characterData = {
+            hyungseok: {
+                name: "Park Hyung Seok",
+                series: "Lookism",
+                description: "Un estudiante que obtiene misteriosamente un segundo cuerpo. A través de esta habilidad única, explora temas de discriminación y justicia mientras se ve envuelto en conflictos cada vez más grandes.",
+                abilities: ["Dos cuerpos", "Boxeo", "Muay Thai", "Análisis de combate"],
+                stats: {
+                    fuerza: "95/100",
+                    velocidad: "90/100",
+                    técnica: "85/100",
+                    inteligencia: "80/100"
+                },
+                connections: ["Daniel Park", "Vasco", "Jay", "Crystal Choi"]
+            },
+            hobin: {
+                name: "Hobin Yoo",
+                series: "How to Fight",
+                description: "Un youtuber que aprende diferentes estilos de pelea para sobrevivir y proteger a sus amigos. Su capacidad de análisis y determinación lo convierten en un luchador formidable.",
+                abilities: ["Análisis de combate", "Adaptabilidad", "Técnicas mixtas", "Determinación"],
+                stats: {
+                    fuerza: "75/100",
+                    velocidad: "80/100",
+                    técnica: "90/100",
+                    inteligencia: "95/100"
+                },
+                connections: ["Bomi", "Moonsung", "Samdak"]
+            },
+            managerkim: {
+                name: "Manager Kim",
+                series: "Manager Kim",
+                description: "Ex agente del Servicio Nacional de Inteligencia y padre dedicado. Sus habilidades excepcionales y experiencia lo convierten en uno de los personajes más fuertes del universo PTJ.",
+                abilities: ["Combate militar", "Tácticas especiales", "Fuerza sobrehumana", "Experiencia en inteligencia"],
+                stats: {
+                    fuerza: "100/100",
+                    velocidad: "95/100",
+                    técnica: "100/100",
+                    inteligencia: "90/100"
+                },
+                connections: ["Tom Lee", "SMC", "Eugene"]
+            }
+        };
+
+        // Animación de la línea temporal
+        function checkTimelineVisibility() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const isVisible = rect.top <= window.innerHeight * 0.8;
+                if (isVisible) {
+                    item.classList.add('visible');
+                }
+            });
+        }
+
+        // Modal de personajes mejorado
+        function showCharacterInfo(characterId) {
+            const character = characterData[characterId];
+            const modal = document.getElementById('characterModal');
+            const infoDiv = document.getElementById('characterInfo');
+            
+            infoDiv.innerHTML = `
+                <div class="character-details">
+                    <div class="character-image">
+                        <img src="/api/placeholder/300/400" alt="${character.name}">
+                    </div>
+                    <div class="character-info">
+                        <h2>${character.name}</h2>
+                        <p><strong>Serie:</strong> ${character.series}</p>
+                        <p>${character.description}</p>
+                        
+                        <h3>Estadísticas</h3>
+                        <div class="character-stats">
+                            ${Object.entries(character.stats).map(([stat, value]) => `
+                                <div class="stat-item">
+                                    <strong>${stat.charAt(0).toUpperCase() + stat.slice(1)}</strong>
+                                    <p>${value}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <h3>Habilidades</h3>
+                        <ul>
+                            ${character.abilities.map(ability => `<li>${ability}</li>`).join('')}
+                        </ul>
+
+                        <h3>Conexiones</h3>
+                        <div class="connections-grid">
+                            ${character.connections.map(connection => `
+                                <div class="connection-item">${connection}</div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('characterModal');
+            modal.classList.remove('active');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navegación suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Iniciar animaciones de la línea temporal
+checkTimelineVisibility();
+window.addEventListener('scroll', checkTimelineVisibility);
+
+// Event listeners para las cards de personajes
+document.querySelectorAll('[data-character]').forEach(card => {
+  card.addEventListener('click', () => {
+    const characterId = card.getAttribute('data-character');
+    showCharacterInfo(characterId);
+  });
+});
+
+// Event listener para cerrar el modal
+document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+window.addEventListener('click', (event) => {
+  const modal = document.getElementById('characterModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+// Animación de entrada para las cards
+const cards = document.querySelectorAll('.series-card');
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+cards.forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = 'all 0.5s ease';
+  cardObserver.observe(card);
+});
+
+// Animación para la sección de teorías
+const theoryCards = document.querySelectorAll('.theory-card');
+const theoryObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateX(0)';
+    }
+  });
+}, observerOptions);
+
+theoryCards.forEach(card => {
+card.style.opacity = '0';
+card.style.transform = 'translateX(-20px)';
+card.style.transition = 'all 0.5s ease';
+theoryObserver.observe(card);
+});
+});
+
+// Función para manejar el modo oscuro
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+}
+
+// Verificar preferencia de modo oscuro guardada
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark-mode');
+}
+</script> </body> </html>
